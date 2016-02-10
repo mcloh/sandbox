@@ -1,0 +1,15 @@
+{
+  "name": "sandbox",
+  "scripts": {
+  },
+  "env": {
+  },
+  "addons": [
+    "cloudinary",
+    "hypdf",
+    "mongolab"
+  ],
+  "buildpacks": [
+
+  ]
+}
