@@ -15,18 +15,13 @@ var _xhrGetJSON = function(url, callback) {
 
 var createTag = function(params){
     var el = document.createElement(params.tagName);
-    if(!params.parent) {
-        if(typeof params.parent === 'object'){
-            params.parent.append(el);
-        }else{
-            document.querySelector(params.parent).append(el);
-        }
+    if(!!params.parent) {
+        if(typeof params.parent === 'object') params.parent.append(el);
+        else document.querySelector(params.parent).append(el);
     }
-    if(!params.class) el.classList.add(params.class);
+    if(!!params.class) el.classList.add(params.class);
     for(var k in params){
-        if(k!=='parent' && k!=='class' && !k.trim){
-            el[k] = params[k];
-        }
+        if(k!=='parent' && k!=='class' && !k.trim) el[k] = params[k];
     }
     return el;
 }
